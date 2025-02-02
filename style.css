@@ -1,0 +1,137 @@
+/* General Reset and Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to top, #a1c4fd, #c2e9fb);
+  /* Soft gradient sky */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+/* Rain Animation */
+@keyframes rainDrop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.rain {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: rainDrop 2s linear infinite;
+  opacity: 0.6;
+}
+
+.rain:nth-child(odd) {
+  animation-duration: 1.8s;
+  left: 25%;
+}
+
+.rain:nth-child(even) {
+  animation-duration: 2s;
+  left: 50%;
+}
+
+/* Container Styling */
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.container h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  outline: none;
+  transition: border-color 0.3s ease;
+  background-color: #f7f7f7;
+}
+
+input:focus {
+  border-color: #6ec1e4;
+}
+
+button {
+  padding: 14px 30px;
+  background-color: #6ec1e4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5ab6d2;
+}
+
+.weather-info {
+  margin-top: 30px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.weather-info p {
+  margin: 10px 0;
+}
+
+.weather-info strong {
+  color: #6ec1e4;
+}
+
+.error {
+  color: red;
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 500px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+  }
+}
